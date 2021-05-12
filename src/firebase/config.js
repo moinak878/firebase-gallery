@@ -1,6 +1,6 @@
-import * as firebase from 'firebase/app';
-import 'firebase/storage';
-import 'firebase/firestore';
+import firebase from 'firebase/app';
+import 'firebase/storage'; //storage sdk
+import 'firebase/firestore'; //firestore sdk
 
 var firebaseConfig = {
     apiKey: "AIzaSyB9rid8ywLJbJgsIbKjF1S7ljFeyae-vQQ",
@@ -12,10 +12,11 @@ var firebaseConfig = {
 };
   
   // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-  
-const projectStorage = firebase.storage();
-const projectFirestore = firebase.firestore();
 
-export { projectStorage, projectFirestore };
+firebase.initializeApp(firebaseConfig);
+const storage = firebase.storage(); //starts storage service 
+const db = firebase.firestore(); //firestore - realtime db service 
+const timeStamp = firebase.firestore.FieldValue.serverTimestamp;
+
+export { storage, db , timeStamp};
 
