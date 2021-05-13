@@ -15,6 +15,7 @@ const useStorage = (file) => {
                 console.log('uploaded...')
                 const url = await storage.ref(file.name).getDownloadURL();
                 setUrl(url);
+                //uploading url to firestore db 
                 const createdAt = timeStamp();
                 db.collection('images').add({ url, createdAt});
             })

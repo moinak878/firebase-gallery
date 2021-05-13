@@ -12,7 +12,8 @@ export default function Upload({file}) {
     return (
         <div className="pics">
             <p>{url}</p>
-            <img src={url} alt="" style={ { height : '500px' , width : '500px' }}/>
         </div>
     )
 }
+
+// <img src={url} alt="" style={ { height : '500px' , width : '500px' }}/>
